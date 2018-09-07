@@ -30,23 +30,23 @@ predicate, accessor, and mutator are provided.
 </p>
 
 <p>
-In addition to it, an equality predicate and union operations (link,
+In addition to the state, an equality predicate and union operations (link,
 union, unify) are provided.  Applying a union operation to two
 unifiable boxes makes the two boxes equal (in the sense of the
 equality predicate).  As a consequence, their state will also become
 identical.  In the case of link and union, it will be the state of one
-of the two unioned boxes, in the case of unify, the state is
+of the two unioned boxes.  In the case of unify, the state is
 determined by a supplied unification procedure.
 </p>
 
 <h1>Rationale</h1>
 
 <p>
-  Disjoint-set (or union-find) forests are a basic well-known data
+  The disjoint-set (or union-find) forest is a basic, well-known data
   structure that tracks partitions of a set.  For example, it can be
   used to keep track of the connected components of an undirected
   graph.  It can also be used in implementations of unification or in
-  implementing Kruskal's algorithm to find the minimum spannig tree of
+  implementing Kruskal's algorithm to find the minimum spanning tree of
   a graph.
 </p>
 
@@ -60,7 +60,7 @@ determined by a supplied unification procedure.
 
 <p>
   There are implementations of the union-find data structure in
-  Haskell, SML/NJ, C++ (Boost), &hellip; It is the aim of this SRFI to
+  Haskell, SML/NJ, C++ (Boost), etc.  It is the aim of this SRFI to
   provide an implementation for Scheme together with a
   standardized interface.
 </p>
@@ -77,7 +77,7 @@ determined by a supplied unification procedure.
 </p>
 
 <p>
-  <table>
+  <table style="text-align: left">
     <thead>
       <tr>
 	<th>Operation</th><th>Boxes</th><th>Unifiable boxes</th>
@@ -206,7 +206,7 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
   of <code><em>ubox<sub>1</sub></em></code>
   and <code><em>ubox<sub>2</sub></em></code>,
   makes <code><em>ubox<sub>1</sub></em></code>
-  and <code><em>ubox<sub>2</sub></em></code> equal and updates their
+  and <code><em>ubox<sub>2</sub></em></code> equal, and updates their
   value to the result of the invocation of <code><em>proc</em></code>.
 </p>
 
@@ -239,7 +239,8 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
 </p>
 
 <p>
-  <a href="srfi/161.sld">Source for the reference implementation.</a>
+  <a href="https://srfi.schemers.org/srfi-161/srfi-161.tgz">Source for
+    the sample implementation.</a>
 </p>
 
 <h1>Acknowledgements</h1>
