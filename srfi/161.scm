@@ -48,7 +48,7 @@
   (eq? (ubox-find ubox1) (ubox-find ubox2)))
 
 (define (ubox-unify! proc ubox1 ubox2)
-  (let ((value (proc (ubox-value ubox1) (ubox-value ubox2))))
+  (let ((value (proc (ubox-ref ubox1) (ubox-ref ubox2))))
     (ubox-union! ubox1 ubox2)
     (ubox-set! ubox1 value)))
 
