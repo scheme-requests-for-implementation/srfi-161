@@ -31,10 +31,10 @@ Marc Nieper Wi&szlig;kirchen
 <h1>Abstract</h1>
 
 <p>
-Unifiable boxes are, like the boxes
-of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI
-111</a>, objects with a single mutable state.  A constructor,
-predicate, accessor, and mutator are provided.
+  Unifiable boxes are, like the boxes
+  of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI
+    111</a>, objects with a single mutable state.  A constructor,
+  predicate, accessor, and mutator are provided.
 </p>
 
 <p>
@@ -45,6 +45,13 @@ equality predicate).  As a consequence, their state will also become
 identical.  In the case of link and union, it will be the state of one
 of the two unioned boxes.  In the case of unify, the state is
 determined by a supplied unification procedure.
+</p>
+
+<p>
+  Unifiable boxes are
+  also known under the names <i>disjoint-set data
+    structure</i>, <i>union–find data structure</i> or <i>merge–find
+    set</i>.
 </p>
 
 <h1>Issues</h1>
@@ -168,7 +175,9 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
 </p>
 
 <p>It is an error if two threads access the same equivalence class of
-  unifiable boxes at the same time.
+  unifiable boxes at the same time.  It is no error if two threads
+  access distinct equivalence classes of unifiable boxes that remain
+  distinct during the accesses at the same time.
 </p>
 
 <h2>Procedures</h2>
@@ -199,7 +208,7 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
 
 <p>
   Mutator.  Changes the unifiable box <code><em>ubox</em></code> to hold
-  <code><em>value</em></code>.
+  <code><em>value</em></code>.  The return value is unspecified.
 </p>
 
 <p><code>(ubox=? <em>ubox<sub>1</sub></em> <em>ubox<sub>2</sub></em>)</code></p>
@@ -220,6 +229,7 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
   makes <code><em>ubox<sub>1</sub></em></code>
   and <code><em>ubox<sub>2</sub></em></code> equal, and updates their
   value to the result of the invocation of <code><em>proc</em></code>.
+  The return value is unspecified.
 </p>
 
 <p><code>(ubox-union! <em>ubox<sub>1</sub></em> <em>ubox<sub>2</sub></em>)</code></p>
@@ -231,6 +241,7 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
   unified box is the value of
   either <code><em>ubox<sub>1</sub></em></code>
   or <code><em>ubox<sub>2</sub></em></code> before the unification.
+  The return value is unspecified.
 </p>
 
 <p><code>(ubox-link! <em>ubox<sub>1</sub></em> <em>ubox<sub>2</sub></em>)</code></p>
@@ -240,7 +251,7 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
   boxes <code><em>ubox<sub>1</sub></em></code>
   and <code><em>ubox<sub>2</sub></em></code> equal.  The value of the
   unified box is the value of <code><em>ubox<sub>2</sub></em></code>
-  before the unification.
+  before the unification.  The return value is unspecified.
 </p>
 
 <h1>Implementation</h1>
