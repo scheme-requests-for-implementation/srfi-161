@@ -96,35 +96,33 @@ determined by a supplied unification procedure.
   following table:
 </p>
 
-<p>
-  <table style="text-align: left">
-    <thead>
-      <tr>
-	<th>Operation</th><th>Boxes</th><th>Unifiable boxes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-	<td>Constructor</td><td><code>box</code></td><td><code>ubox</code></td>
-      </tr>
-      <tr>
-	<td>Predicate</td><td><code>box?</code></td><td><code>ubox?</code></td>
-      </tr>
-      <tr>
-	<td>Accessor</td><td><code>unbox</code></td><td><code>ubox-ref</code></td>
-      </tr>
-      <tr>
-	<td>Mutator</td><td><code>set-box!</code></td><td><code>ubox-set!</code></td>
-      </tr>
-      <tr>
-	<td>Equality</td><td><code>eq?</code></td><td><code>ubox=?</code></td>
-      </tr>
-      <tr>
-	<td>Union</td><td><i>n.a.</i></td><td><code>ubox-unify!</code>, <code>ubox-union!</code>, <code>ubox-link!</code></td>
-      </tr>
-    </tbody>
-  </table>
-</p>
+<table style="text-align: left">
+  <thead>
+    <tr>
+      <th>Operation</th><th>Boxes</th><th>Unifiable boxes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Constructor</td><td><code>box</code></td><td><code>ubox</code></td>
+    </tr>
+    <tr>
+      <td>Predicate</td><td><code>box?</code></td><td><code>ubox?</code></td>
+    </tr>
+    <tr>
+      <td>Accessor</td><td><code>unbox</code></td><td><code>ubox-ref</code></td>
+    </tr>
+    <tr>
+      <td>Mutator</td><td><code>set-box!</code></td><td><code>ubox-set!</code></td>
+    </tr>
+    <tr>
+      <td>Equality</td><td><code>eq?</code></td><td><code>ubox=?</code></td>
+    </tr>
+    <tr>
+      <td>Union</td><td><i>n.a.</i></td><td><code>ubox-unify!</code>, <code>ubox-union!</code>, <code>ubox-link!</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <p><i> Note: Unifiable boxes use the standard naming pattern for
     Scheme procedures.  As SRFI 111 deviates (for historical reasons)
@@ -187,8 +185,8 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
 
 <p>
   Constructor.  Returns a newly allocated unifiable box initialized
-  to <code><em>value</em></code>, which is not equal to any previously
-  constructed unifiable box.
+  to <code><em>value</em></code>.  The new unifiable box is not equal
+  to any previously constructed unifiable box.
 </p>
 
 <p><code>(ubox? <em>object</em>)</code></p>
@@ -287,8 +285,8 @@ unifiable boxes that are pairwise not <code>eq?</code> to each other.)
   implemented by this SRFI, in Scheme code that generates random
   mazes.  The code and the description of the algorithm
   is <a href="https://www.ccs.neu.edu/home/shivers/mazes.html">available
-  on Olin Shiver's website</a>.  Thanks to A. Gleckler for pointing
-  this (practical) use of disjoint sets out to me.
+  on Olin Shiver's web site</a>.  Thanks to Arthur A. Gleckler for
+  pointing this (practical) use of disjoint sets out to me.
 </p>
 
 <h1>Copyright</h1>
